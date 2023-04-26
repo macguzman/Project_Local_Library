@@ -1,5 +1,6 @@
 function findAuthorById(authors, id) {
-  let found = authors.find((author) => id === author.id);
+  const findById = (author) => id === author.id;
+  let found = authors.find(findById);
   return found;
 }
 
