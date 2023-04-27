@@ -1,14 +1,9 @@
 function getTotalBooksCount(books) {
-  var total = 0
-  const totalBooks = books.map((book) => book.id) 
-  for (let i = 0; i < totalBooks.length; i++) {
-    total++
-  }
-  return total
+ return helpCount(books);
 }
 
 function getTotalAccountsCount(accounts) {
-  let total = 0
+  var total = 0
   for (let i = 0; i < accounts.length; i++) {
     total++
   }
@@ -55,6 +50,12 @@ function getMostPopularAuthors(books, authors) {
      count: book.borrows.length}})
      .sort((a, b) => (a.count < b.count ? 1 : -1)).slice(0,5)
 
+}
+
+function helpCount (count) {
+  let total = 0;
+  count.forEach((account) => total++)
+  return total;
 }
 
 module.exports = {
